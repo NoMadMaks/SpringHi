@@ -6,9 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HiController {
     
-    @GetMapping(value = "/hi")
-    public String SayHi() {
-        return ("Hi man/woman!");
+    @GetMapping(value = "/hey")
+    public String SayHi(String name) {
+        if (name == null)
+        return "Hey man/woman";
+        else
+        return "Hey " + name + "!";
     }
 
 }
