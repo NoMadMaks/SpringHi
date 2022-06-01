@@ -8,15 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HiController {
     
     @GetMapping(value = "/hey")
-    public String SayHi(@RequestParam String name) {
-        return "Hey " + name + "!";
-    }
-
-    @GetMapping(value = "/hey1")
-    public String SayHi1(String name) {
-        if (name == null)
-        return "Hey man/woman";
-        else
-        return "Hey " + name + "!";
+    public String SayHi(@RequestParam(defaultValue = "") String name) {
+            return "Hey " + name + "!";   
     }
 }
